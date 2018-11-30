@@ -14,7 +14,7 @@ python3 yiffer-dl.py https://yiffer.xyz/Trust%20Me%20-%20alt.%20ending
 # Assert the './dl/ exists
 if [ -d dl/ ]; then 
   # List the directory and open it in feh
-  ls dl/
+  ls -al dl/
   feh dl/
 else
   echo "Test fail, no dl directory"
