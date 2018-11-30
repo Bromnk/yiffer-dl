@@ -2,10 +2,12 @@
 
 Downloads comics from yiffer.xyz
 
-# Dependecies
+## Dependecies
 
-(Requests)[https://pypi.org/project/requests/]
+[Requests](https://pypi.org/project/requests/)
 
-# Usage
+## Usage
+Just give it a yiffer url:
 
-    python yiffer-dl https://yiffer.xyz/Comic%20Relief
+    python yiffer-dl.py https://yiffer.xyz/Comic%20Relief
+Images will appear in `./dl/`
