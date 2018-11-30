@@ -12,7 +12,6 @@ import requests
 import os
 
 # Constants
-MIN_DELAY = 2  # seconds
 DOWNLOAD_LOCATION = os.path.join(
     os.path.dirname(os.path.realpath(__file__)), "dl/")
 USER_AGENT = "Yiffer-dl V0 <notandinotandi@gmail.com> (bot)"
@@ -27,7 +26,6 @@ URL = argv[1]
 def download_comic(
     url,
     dl_dir,
-    min_delay=MIN_DELAY,
     user_agent=USER_AGENT
 ):
     image_id = 1
