@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 """
 Download all pages of a yiffer.xyz comic into a directory (./dl by default).
-
 Takes yiffer url as an argument
-
 No license
 """
 
 from sys import argv
 import requests
 import os
+from posixpath import join as urljoin
 
 # Constants
 DOWNLOAD_LOCATION = os.path.join(
@@ -32,7 +31,7 @@ def download_comic(
     err = None
     while err is None:
         # form: ../comics/<name>/xx.jpg
-        image_src = os.path.join(
+        image_src = urljoin(
             "../comics/", url.split("/")[-1], "{0:02d}.jpg".format(image_id))
         print("Downloading image {}".format(image_id))
         err = _download_image(url, dl_dir, image_id, image_src)
@@ -65,4 +64,4 @@ def _download_image(comic_url, dl_dir, image_id, image_src):
 
 if __name__ == "__main__":
     os.mkdir(DOWNLOAD_LOCATION)
-    download_comic(URL, DOWNLOAD_LOCATION)
+download_comic(URL, DOWNLOAD_LOCATION)
