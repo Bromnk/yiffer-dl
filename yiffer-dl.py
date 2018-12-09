@@ -41,8 +41,7 @@ def download_comic(
 
 
 def _download_image(comic_url, dl_dir, image_id, image_src):
-    # If yiffer starts appending slashes, this breaks.
-    image_url = comic_url + "/" + image_src
+    image_url = urljoin(comic_url, image_src)
 
     # Download path should be ./dl/xx.jpg
     dl_path = os.path.join(
